@@ -1,0 +1,19 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "算法刷题",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hongjinquan/leetcode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hongjinquan/leetcode/issues"
+  },
+  "homepage": "https://github.com/hongjinquan/leetcode#readme"
+}
