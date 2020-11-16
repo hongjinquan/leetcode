@@ -17,6 +17,10 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
+// 个人理解（不对请帮忙纠错）
+// 复杂度：
+// 1、时间复杂度：o(n)
+// 2、空间复杂度：o(n)
 var addTwoNumbers = function (l1, l2) {
     let root = new ListNode(0);
     let cur_node = root;
