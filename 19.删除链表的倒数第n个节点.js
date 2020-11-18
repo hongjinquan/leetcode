@@ -48,7 +48,7 @@ var removeNthFromEnd = function (head, n) {
      * 方法二：快慢指针
      * 复杂度：
      * 1、时间复杂度：o(n)
-     * 2、空间复杂度：o()
+     * 2、空间复杂度：o(1)
      */
 
     if (head == null) return null;
