@@ -20,7 +20,7 @@ function ListNode(val, next) {
 
 2. 双向链表
 
-![avatar](https://github.com/hongjinquan/leetcode/blob/main/ListNode/images/doubleListNode.jpg)
+![avatar](https://github.com/hongjinquan/leetcode/blob/main/ListNode/images/doubleListNode.png)
 
 3. 循环链表
 
