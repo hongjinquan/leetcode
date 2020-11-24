@@ -16,12 +16,12 @@ function ListNode(val, next) {
 #### 分类
 1. 单向链表
 
-![avatar](https://github.com/hongjinquan/leetcode/blob/main/ListNode/img/danListNode.png)
+![avatar](https://img-blog.csdnimg.cn/20201124142845490.png)
 
 2. 双向链表
 
-![avatar](https://github.com/hongjinquan/leetcode/blob/main/ListNode/img/doubleListNode.png)
+![avatar](https://img-blog.csdnimg.cn/20201124142845471.png)
 
 3. 循环链表
 
-![avatar](https://github.com/hongjinquan/leetcode/blob/main/ListNode/img/circleListNode.png)
+![avatar](https://img-blog.csdnimg.cn/20201124142845470.png)
