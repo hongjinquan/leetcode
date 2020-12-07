@@ -11,6 +11,7 @@ const selectSort = (arrs) => {
      * 复杂度：
      * 1、时间复杂度：o(n^2)
      * 2、空间复杂度：o(1)
+     * 稳定性：不稳定
      */
     let temp = undefined;
     console.time("selectSort")
