@@ -9,6 +9,7 @@ const quickSort = (arrs, l, r) => {
      * 复杂度：
      * 1、时间复杂度：o(n * log^n)
      * 2、空间复杂度：o(log^n) 递归函数需要栈空间，栈空间的大小取决于递归的深度
+     * 稳定度：不稳定
      */
     if (l >= r) {
         return;
