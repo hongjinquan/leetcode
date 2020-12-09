@@ -3,7 +3,7 @@ let len = 0;
 // 构建堆
 const buildMaxHeap = (arr) => {
     len = arr.length;
-    // 从下往上调整
+    // 从下往上构建
     for (let i = Math.floor(len / 2); i >= 0; i--) {
         updateHeap(arr, i)
     }
@@ -49,14 +49,20 @@ const swap = (arr, i, j) => {
  * @param {*} arr 
  */
 const heapSort = (arr) => {
-    // 组件最大堆
+    /**
+     * 算法复杂度：
+     * 1、时间复杂度：o(n*log^n)
+     * 2、空间复杂度：o(1)
+     * 稳定性：不稳定
+     */
+    // 组建最大堆
     buildMaxHeap(arr)
     for (let i = arr.length - 1; i >= 0; i--) {
         // 第一个和最后一个交换位置
         swap(arr, 0, i)
         // 每交换一次，长度减一
         len--;
-        // 更新堆
+        // 从最顶端更新堆
         updateHeap(arr, 0)
     }
     return arr;
