@@ -19,13 +19,16 @@
  */
 var inorderTraversal = function (root) {
     let res = []
-    if (root != null) {
-        // 先左节点，然后根节点，然后右节点
-        res = res.concat(inorderTraversal(root.left))
-        res.push(root.val)
-        res = res.concat(inorderTraversal(root.right))
-    }
+    temp_doing(root, res)
     return res;
 };
+var temp_doing = function (root, res) {
+    if (root != null) {
+        // 先左节点，然后根节点，然后右节点
+        temp_doing(root.left, res)
+        res.push(root.val)
+        temp_doing(root.right, res)
+    }
+}
 // @lc code=end
 
