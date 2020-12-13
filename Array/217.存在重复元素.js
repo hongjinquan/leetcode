@@ -10,15 +10,22 @@
  * @return {boolean}
  */
 var containsDuplicate = function (nums) {
-    const set_temp = new Set()
-    for (let i = 0; i < nums.length; i++) {
-        if (set_temp.has(nums[i])) {
-            return true;
-        } else {
-            set_temp.add(nums[i])
-        }
-    }
-    return false;
+    /**
+     * 方法一
+     */
+    // const set_temp = new Set()
+    // for (let i = 0; i < nums.length; i++) {
+    //     if (set_temp.has(nums[i])) {
+    //         return true;
+    //     } else {
+    //         set_temp.add(nums[i])
+    //     }
+    // }
+    // return false;
+    /**
+     * 方法二
+     */
+    return Array.from(new Set(nums)).length !== nums.length
 };
 // @lc code=end
 
