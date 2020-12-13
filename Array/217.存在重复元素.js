@@ -11,7 +11,7 @@
  */
 var containsDuplicate = function (nums) {
     /**
-     * 方法一
+     * 方法一：适当
      */
     // const set_temp = new Set()
     // for (let i = 0; i < nums.length; i++) {
@@ -23,9 +23,18 @@ var containsDuplicate = function (nums) {
     // }
     // return false;
     /**
-     * 方法二
+     * 方法二：省时间费空间
      */
-    return Array.from(new Set(nums)).length !== nums.length
+    // return Array.from(new Set(nums)).length !== nums.length
+    /**
+     * 方法三：费时间省空间
+     */
+    for (let i = 0; i < nums.length; i++) {
+        if (nums.lastIndexOf(nums[i]) != i) {
+            return true
+        }
+    }
+    return false;
 };
 // @lc code=end
 
