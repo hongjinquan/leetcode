@@ -30,11 +30,33 @@ var fib = function (n) {
      * 1、时间复杂度：o(n) * o(1) = o(n)
      * 2、空间复杂度：o(n)
      */
-    const res = noted([], n)
-    return res;
+    /* const res = noted([], n)
+    return res; */
+
     /**
-     * 方法三：DP table 方式
+     * 方法三：DP_TABLE方式(dynamic programing，动态规划)
+     * 复杂度：
+     * 1、时间复杂度：o(n)
+     * 2、空间复杂度：o(n)
      */
+    // const res = dp_table([], n)
+    // return res;
+
+    /**
+     * 方法四：优化 =》 DP_Table方式
+     * 复杂度：
+     * 1、时间复杂度：o(n)
+     * 2、空间复杂度：o(1)
+     */
+    if (n == 0) return 0
+    if (n == 1 || n == 2) return 1
+    let pre = 1, curr = 1;
+    for (let i = 3; i <= n; i++) {
+        const temp = pre + curr
+        pre = curr;
+        curr = temp;
+    }
+    return curr;
 };
 
 const noted = (temp, n) => {
@@ -49,6 +71,23 @@ const noted = (temp, n) => {
     }
     temp[n] = noted(temp, n - 1) + noted(temp, n - 2)
     return temp[n]
+}
+
+const dp_table = (dp, n) => {
+    if (n == 0) {
+        return 0;
+    }
+    if (n == 1 || n == 2) {
+        return 1;
+    }
+    dp[0] = 0, dp[1] = 1, dp[2] = 1
+    if (dp[n]) {
+        return dp[n]
+    }
+    for (let i = 3; i <= n; i++) {
+        dp[i] = dp[i - 1] + dp[i - 2]
+    }
+    return dp[n]
 }
 // @lc code=end
 
