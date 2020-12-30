@@ -31,9 +31,8 @@ var buildTree = function (inorder, postorder) {
     for (let i = 0; i < inorder.length; i++) {
         temp_map.set(inorder[i], i)
     }
-    const n = temp_map.size
-    postright = n - 1
-    return buildMyTree(inorder, postorder, 0, n - 1)
+    postright = postorder.length - 1
+    return buildMyTree(inorder, postorder, 0, inorder.length - 1)
 };
 
 const buildMyTree = (inorder, postorder, inleft, inright) => {
