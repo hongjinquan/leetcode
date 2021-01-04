@@ -18,12 +18,12 @@
  */
 var countNodes = function (root) {
     /**
-     * 一、广度优先
+     * 一、广度优先(或者深度优先) 遍历节点，暴利解决
      * 复杂度：
      * 1、时间复杂度：o(n)
      * 2、空间复杂度：o(n)
      */
-    if (!root) {
+    /* if (!root) {
         return 0;
     }
     let container = [root];
@@ -38,7 +38,10 @@ var countNodes = function (root) {
         }
         counter++
     }
-    return counter;
+    return counter; */
+    /**
+     * 
+     */
 };
 // @lc code=end
 
