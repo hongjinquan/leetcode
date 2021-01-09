@@ -66,6 +66,12 @@ var countNodes = function (root) {
 
 };
 
+/**
+ * 判断 k 这个节点是否存在
+ * @param {*} root 根节点
+ * @param {*} level 树的深度
+ * @param {*} k 当前比较的节点
+ */
 const nodeExists = (root, level, k) => {
     let bits = 1 << (level - 1);
     let node = root;
