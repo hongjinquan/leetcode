@@ -42,7 +42,7 @@ var countNodes = function (root) {
     /**
      * 二、二分查找 + 位运算
      */
-    if (root == null) {
+    /* if (root == null) {
         return 0
     }
     // 先获取树的深度
@@ -57,13 +57,36 @@ var countNodes = function (root) {
     while (low < high) {
         const mid = Math.floor((high - low + 1) / 2) + low
         if (nodeExists(root, level, mid)) {
+            // 取后半段 mid ~ high
             low = mid;
         } else {
+            // 取前半段 low ~ mid-1
             high = mid - 1
         }
     }
-    return low;
+    return low; */
 
+    // 方法三：完全二叉树和满二叉树的特征
+    if (root == null) {
+        return 0;
+    }
+    let left_level = getChildrenLevel(root.left);
+    let right_level = 0;
+    let count = 0;
+    while (root) {
+        right_level = getChildrenLevel(root.right)
+        // 左子树level等于右子树level，说明左子树为满二叉树
+        if (left_level == right_level) {
+            count += (1 << left_level)
+            root = root.right
+        } else {
+            // 右子树为满二叉树
+            count += (1 << right_level)
+            root = root.left
+        }
+        left_level--;
+    }
+    return count;
 };
 
 /**
@@ -93,6 +116,19 @@ const nodeExists = (root, level, k) => {
         bits >>= 1;
     }
     return node !== null;
+}
+
+/**
+ * 获取以当前node为root节点的树的高度
+ * @param {*} node 节点
+ */
+const getChildrenLevel = (node) => {
+    let level = 0;
+    while (node !== null) {
+        level++;
+        node = node.left;
+    }
+    return level;
 }
 // @lc code=end
 
