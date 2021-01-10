@@ -73,9 +73,18 @@ var countNodes = function (root) {
  * @param {*} k 当前比较的节点
  */
 const nodeExists = (root, level, k) => {
+    // bits = 1 << (level - 1)，这里之所以为level-1，是因为同一个层的节点，只需要比较高位之后的位数即可，因为高位都一样
     let bits = 1 << (level - 1);
     let node = root;
+    // 判断结束条件：节点 == null，则说明节点不存在；node存在 && bits等于0时，则说明从次高位到末位截止，节点都存在
     while (node !== null && bits > 0) {
+        /**
+         * bits & k：这里做位运算，如果为0，则为左子树，否则为右子树
+         *  k是目标节点，bits初始值为次高位的二进制数。比如：k为10（1010），bits则为二进制100
+         *  bits通过 1 从次高位逐次右移，跟节点k从顶端到最深层，进行路径对比，进行判断节点是左子树还是右子树。
+         *  通过当前节点10的 010 和bits 100作位运算，此时比较 左边的第一位 0 和 1，0 & 1 = 0，则说明路径为向左走
+         *  这时把孩子节点作为node节点，bits位运算左或右移动1位，逐次进行递归判断，直到最后节点
+         */
         if (!(bits & k)) {
             node = node.left;
         } else {
