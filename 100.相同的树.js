@@ -23,6 +23,9 @@ var isSameTree = function (p, q) {
     return node_compare(p, q)
 };
 var node_compare = function (node1, node2) {
+    /**
+     * 方法一：深度优先（dfs）
+     */
     if (node1 != null && node2 != null) {
         if (node1.val != node2.val) {
             return false
