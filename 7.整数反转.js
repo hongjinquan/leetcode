@@ -16,10 +16,10 @@ var reverse = function (x) {
     while (x != 0) {
         let pop = x % 10;
         x = (x - pop) / 10;
-        if (rev > max_val / 10 || (rev == max_val / 10 && pop > 7)) {
+        if (rev > max_val / 10 || (rev == Math.floor(max_val / 10) && pop > 7)) {
             return 0;
         }
-        if (rev < min_val / 10 || (rev == min_val / 10 && pop < -8)) {
+        if (rev < min_val / 10 || (rev == Math.ceil(min_val / 10) && pop < -8)) {
             return 0;
         }
         rev = rev * 10 + pop;
